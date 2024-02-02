@@ -1,0 +1,191 @@
+.header{
+    display: flex;
+    width: 100%;
+    min-height: 8rem;
+    padding: 1rem 4rem 1rem 3.5rem;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 52em){
+        padding-bottom: 0;
+    }
+
+    @media only screen and (max-width: 34em){
+        flex-wrap: wrap;
+        padding: 2rem 4rem 1.4rem 3.5rem;
+    }
+
+    @media only screen and (max-width: 25em){
+        padding: 2rem 2rem .4rem 2rem;
+    }
+}
+
+.sidebar-menu{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    cursor: pointer;
+
+    @media only screen and (max-width: 52em){
+        gap: 2.4rem;
+    }
+
+    @media only screen and (max-width: 25em){
+        gap: 1.6rem;
+    }
+
+    &__icon{
+        width: 3rem;
+        height: 0.24rem;
+        border: none;
+        background: black;
+        border-radius: 25px;
+        margin: 0.4rem;
+        position: relative;
+    }
+
+    &__icon::after,
+    &__icon::before{
+        content: "";
+        width: 1.6rem;
+        position: absolute;
+        background-color: rgba(0,0,0,0.861);
+        height: 0.22rem;
+        border: none;
+        display: block;
+        left: 0.65rem;
+        border-radius: 25px;
+    }
+
+    &__icon::after{
+        top: -.7rem;
+    }
+
+    &__icon::before{
+        top: .7rem;
+    }
+}
+
+.heading-1{
+    font-size: 2.8rem;
+
+    @media only screen and (max-width: 25em){
+        font-size: 2.2rem;
+    }
+}
+
+.header-search{
+    width: 50%;
+    position: relative;
+
+    @media only screen and (max-width: 43.75em) {
+        width:40%;
+    }
+    
+    @media only screen and (max-width: 34em) {
+        order:1;
+        flex: 0 1 100%;
+        margin: 1rem 0;
+    }
+
+    &__icon{
+        position: absolute;
+        width: 1.7rem;
+        height: 1.7rem;
+        color: rgba(21,21,34,0.5);
+        top: 1rem;
+        left: 1.7rem;
+        z-index: 1;
+    }
+
+    &__input-text{
+        width: 60%;
+        font-size: 1.3rem;
+        font-family: inherit;
+        border-radius: 25px;
+        padding: 1rem 2rem;
+        padding-left: 4rem;
+        border: none;
+        outline: none;
+        z-index: -1;
+        transition: all 0.2s;
+
+        @media only screen and (max-width: 52em) {
+            width:70%;
+        }
+        
+        @media only screen and (max-width: 43.75em) {
+            width:100%;
+        }
+    }
+}
+
+.header-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &__plus{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__icon{
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+
+    &__noti{
+        display: flex;
+        align-items: center;
+        width: 4rem;
+        height: 3rem;
+        border-right: 1px solid rgba(21,21,34,0.4);
+        margin-right: .8rem;
+
+        &__icon{
+            cursor: pointer;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: rgba(21,21,34,0.7);
+            position: relative;
+    
+            &::before{
+                content: "";
+                position: absolute;
+                background-color: red;
+                width: 0.6rem;
+                height: 0.6rem;
+                z-index: 12;
+                border-radius: 25px;
+                transform: translate(1.4rem, 0.4rem);
+            }
+        }
+    }
+    
+
+    &__profile{
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__photo{
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+
+    &__name{
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}

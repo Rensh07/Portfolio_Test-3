@@ -1,0 +1,195 @@
+.message{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+
+    @media only screen and (max-width: 43.75em) {
+        padding:0;
+        margin-top: 2rem;
+        border: 1px solid rgba(21,21,34,0.2);
+        border-radius: 1.2rem;
+    }
+    
+    @media only screen and (max-width: 34em) {
+        height: calc(100vh - 60.5rem);
+    }
+    
+    @media only screen and (max-width: 25em) {
+        height: calc(100vh - 57rem);
+    }
+}
+
+.message-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3.8rem;
+    padding: 0 2.8rem 1.8rem;
+    border-bottom: 1px solid rgba(21,21,34,0.2);
+
+    @media only screen and (max-width: 62em){
+        margin-top: 2.4rem;
+    }
+
+    &-title{
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &-icons{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    &-icon ion-icon{
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    &-icon-menu {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 25px;
+        background-color: #151522;
+        position: relative;
+        transform: translateY(-0.5rem) rotate(90deg);
+        cursor: pointer;
+    }
+    
+    &-icon-menu::before {
+        content: "";
+        right: -1rem;
+        position: absolute;
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 25px;
+        background-color: #151522;
+    }
+}
+
+.message-items{
+    width: 100%;
+    height: calc(100vh - 15rem);
+    overflow: auto;
+
+    @media only screen and (max-width: 43.75em){
+        height: 54rem;
+    }
+
+    @media only screen and (max-width: 95em){
+        height: calc(100vh - 15rem);
+    }
+
+    @media only screen and (max-width: 62em){
+        height: calc(100vh - 14rem);
+    }
+
+    @media only screen and (max-width: 34em){
+        height: calc(100vh - 67rem);
+    }
+
+    @media only screen and (max-width: 25em){
+        height: calc(100vh - 64rem);
+    }
+
+    &::-webkit-scrollbar{
+        width: 0px;
+    }
+}
+
+.message-item{
+    display: flex;
+    align-items: center;
+    padding: 2.4rem;
+    z-index: 45;
+    cursor: pointer;
+    width: 100%;
+    transition: width, transform .3s;
+
+    @media only screen and (max-width: 62em){
+        padding: 1.6rem;
+    }
+
+    &:last-child{
+        margin-bottom: .7rem;
+    }
+
+    &:not(:first-child){
+        border-top: 1px solid rgba(21,21,34,0.2);
+    }
+
+    &:hover{
+        background-color: #fff;
+        overflow: visible;
+        border-bottom: none;
+        border-radius: 15px;
+        width: 97%;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 2rem 5rem rgba(21,21,34,0.1);
+        transform: translateX(0.6rem) scale(1.01);
+
+        @media only screen and (max-width: 62em){
+            width: 100%;
+            border-radius: 0;
+            transform: translatex(0rem) scale(1);
+        }
+    }
+
+    &:hover+&{
+        border: none;
+    }
+
+    &:hover &-profile-text-star svg{
+        fill: #000;
+    }
+
+    &-img img{
+        width: 4.2rem;
+        height: 4.2rem;
+        border-radius: 50%;
+        margin-right: 1.4rem;
+        object-fit: cover;
+    }
+
+    &-profile{
+        position: relative;
+        width: 100%;
+
+        &-name{
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
+        &-text{
+            font-size: 1.2rem;
+            color: #151522e6;
+            font-weight: 500;
+            margin-bottom: .6rem;
+            position: relative;
+            line-height: 1.4;
+
+            &-star{
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                & svg{
+                    width: 1.6rem;
+                    height: 1.6rem
+                }
+            }
+
+            &-date{
+                position: absolute;
+                right: 0;
+                color: #151522e6;
+                bottom: -1rem;
+            }
+        }
+    }
+}
